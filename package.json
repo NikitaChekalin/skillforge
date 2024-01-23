@@ -3,25 +3,52 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4150",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier -w ."
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.314.0",
+    "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.0"
+    "rebuild": "^0.1.2",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
+    "commit-message-validator": "^1.0.2",
     "eslint": "^8",
-    "eslint-config-next": "14.1.0"
+    "eslint-config-next": "14.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard-with-typescript": "^40.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.3.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-prettier-config": "^1.0.1",
+    "husky": "^8.0.3",
+    "postcss": "^8",
+    "prettier": "^3.2.4",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  },
+  "config": {
+    "commit-message-validator": {
+      "_comment": "pattern can be Regex string or array of Regex string",
+      "pattern": "^(Build|Chore|Docs|Feature|Bugfix|Hotfix|Refactor|Revert|Style|Merge):s?.{1,150}$",
+      "errorMessage": "Invalid commit message format. It should contain (Build|Chore|Docs|Feature|Bugfix|Hotfix|Refactor|Revert|Style|Merge): message"
+    }
   }
 }
