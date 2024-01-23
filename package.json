@@ -9,7 +9,8 @@
     "lint": "next lint",
     "prettier": "prettier -w .",
     "lint:js": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache",
-    "pre-push": "npm run lint:js && npm run build"
+    "pre-push": "npm run lint:js && npm run build",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
