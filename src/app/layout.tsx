@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 
-import { cn } from '@/shared/ui/utils'
+import { cn } from '@/lib/utils'
 
 import './globals.css'
 
@@ -10,16 +10,16 @@ export const metadata: Metadata = {
   description: 'SkillForge - Learn with us!'
 }
 
+interface RootLayout {
+  children: React.ReactNode
+}
+
 const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans'
 })
 
-export default function RootLayout({
-  children
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+const RootLayout = ({ children }: RootLayout) => {
   return (
     <html lang='en'>
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
@@ -28,3 +28,5 @@ export default function RootLayout({
     </html>
   )
 }
+
+export default RootLayout
