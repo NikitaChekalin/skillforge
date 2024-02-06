@@ -1,6 +1,5 @@
+import { LogoIcon } from '@shared/ui/logo-icon'
 import Link from 'next/link'
-
-import { LogoIcon } from '@/shared/ui/logo-icon'
 
 export const Logo = () => {
   return (

@@ -1,10 +1,7 @@
 'use client'
 
-import { LogOut, User } from 'lucide-react'
-import Link from 'next/link'
-
-import { Avatar, AvatarFallback } from '@/shared/ui/avatar'
-import { Button } from '@/shared/ui/button'
+import { Avatar, AvatarFallback } from '@shared/ui/avatar'
+import { Button } from '@shared/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +10,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from '@/shared/ui/dropdown-menu'
+} from '@shared/ui/dropdown-menu'
+import { LogOut, User } from 'lucide-react'
+import Link from 'next/link'
 
 export const Profile = () => {
   return (

@@ -1,7 +1,6 @@
+import { Button } from '@shared/ui/button'
+import { Sheet, SheetContent, SheetHeader, SheetTrigger } from '@shared/ui/sheet'
 import { Menu } from 'lucide-react'
-
-import { Button } from '@/shared/ui/button'
-import { Sheet, SheetContent, SheetHeader, SheetTrigger } from '@/shared/ui/sheet'
 
 interface Layout {
   logo: React.ReactNode
