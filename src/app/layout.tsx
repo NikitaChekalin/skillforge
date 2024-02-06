@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@features/theme'
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 
@@ -24,7 +25,9 @@ const RootLayout = ({ children }: RootLayout) => {
   return (
     <html lang='en'>
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
-        <Header />
+        <ThemeProvider>
+          <Header />
+        </ThemeProvider>
         {children}
       </body>
     </html>
