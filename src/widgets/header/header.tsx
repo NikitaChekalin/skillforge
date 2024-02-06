@@ -1,16 +1,19 @@
-import { Layout } from './_ui/layout'
-import { Logo } from './_ui/logo'
-import { Navigation } from './_ui/navigation'
-import { Profile } from './_ui/profile'
-import { ThemeToggler } from './_ui/theme-toggler'
+import { HeaderVariants } from './types'
+import { Layout, Logo, Navigation, Profile, ThemeToggler } from './ui'
 
-export const Header = () => {
+interface Header {
+  variant: HeaderVariants
+}
+
+export const Header = ({ variant }: Header) => {
+  const isPrivate = variant !== 'public'
+
   return (
     <Layout
       logo={<Logo />}
       navigation={<Navigation />}
       actions={<ThemeToggler />}
-      profile={<Profile />}
+      profile={isPrivate && <Profile />}
     />
   )
 }

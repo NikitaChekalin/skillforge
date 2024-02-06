@@ -1,9 +1,9 @@
-import { ThemeProvider } from '@features/theme'
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 
 import { cn } from '@/lib/utils'
-import { Header } from '@/widgets'
+
+import { GlobalProvider } from './_providers/global-provider'
 
 import './globals.css'
 
@@ -25,10 +25,7 @@ const RootLayout = ({ children }: RootLayout) => {
   return (
     <html lang='en'>
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
-        <ThemeProvider>
-          <Header />
-        </ThemeProvider>
-        {children}
+        <GlobalProvider>{children}</GlobalProvider>
       </body>
     </html>
   )
