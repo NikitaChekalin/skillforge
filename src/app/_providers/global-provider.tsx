@@ -1,5 +1,6 @@
 'use client'
 
+import { NextAuthSessionProvider } from '@entities/session'
 import { ThemeProvider } from 'next-themes'
 
 interface GlobalProvider {
@@ -7,5 +8,9 @@ interface GlobalProvider {
 }
 
 export const GlobalProvider = ({ children }: GlobalProvider) => {
-  return <ThemeProvider>{children}</ThemeProvider>
+  return (
+    <ThemeProvider>
+      <NextAuthSessionProvider>{children}</NextAuthSessionProvider>
+    </ThemeProvider>
+  )
 }
