@@ -1,9 +1,8 @@
 'use client'
 
 import { useTransition } from 'react'
-
-import { Button } from '@/shared/ui/button'
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/shared/ui/card'
+import { Button } from '@shared/ui/button'
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@shared/ui/card'
 
 type CourseItem = {
   course: CourseListElement
