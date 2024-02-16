@@ -16,5 +16,5 @@ Project: SkillForge
 
 ### Additional info
 
-Port: 4150
+Port: 3000
 Node version: v20.9.0

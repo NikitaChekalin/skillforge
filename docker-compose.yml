@@ -1,15 +1,15 @@
 version: '3'
 
 services:
-  db:
+  db_auth:
     image: postgres
+    container_name: db_auth
     restart: always
     ports:
-      - 5432:5432
+      - 5438:5432
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
     volumes:
       - db_data:/var/lib/postgresql/data
 volumes:
