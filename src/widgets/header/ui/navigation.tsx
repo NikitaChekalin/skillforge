@@ -7,7 +7,13 @@ export const Navigation = () => {
         Map
       </Link>
       <Link className='transition-colors hover:text-foreground/80 text-foreground/60' href='/learn'>
-        Learning
+        Learn
+      </Link>
+      <Link
+        className='transition-colors hover:text-foreground/80 text-foreground/60'
+        href='/courses'
+      >
+        Courses
       </Link>
     </nav>
   )
