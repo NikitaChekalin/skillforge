@@ -1,3 +1,4 @@
+import { NextAuthSessionProvider } from '@entities/session'
 import { ThemeProvider } from '@features/theme'
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
@@ -26,9 +27,11 @@ const RootLayout = ({ children }: RootLayout) => {
     <html lang='en'>
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
         <ThemeProvider>
-          <Header />
+          <NextAuthSessionProvider>
+            <Header />
+            {children}
+          </NextAuthSessionProvider>
         </ThemeProvider>
-        {children}
       </body>
     </html>
   )
