@@ -1,4 +1,4 @@
-import { PrismaAdapter } from '@next-auth/prisma-adapter'
+import { PrismaAdapter } from '@auth/prisma-adapter'
 import { privateConfig } from '@shared/config'
 import { prismaDatabaseClient } from '@shared/lib'
 import { compact } from 'lodash-es'
@@ -6,7 +6,12 @@ import { AuthOptions } from 'next-auth'
 import GithubProvider from 'next-auth/providers/github'
 
 export const nextAuthConfig: AuthOptions = {
-  adapter: PrismaAdapter(prismaDatabaseClient),
+  adapter: PrismaAdapter(prismaDatabaseClient) as AuthOptions['adapter'],
+  pages: {
+    signIn: '/auth/sign-in',
+    newUser: '/auth/new-user',
+    verifyRequest: '/auth/verify-request'
+  },
   providers: compact([
     privateConfig.GITHUB_ID &&
       privateConfig.GITHUB_SECRET &&

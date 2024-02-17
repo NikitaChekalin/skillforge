@@ -1,7 +1,9 @@
 'use client'
 
 import { NextAuthSessionProvider } from '@entities/session'
-import { ThemeProvider } from 'next-themes'
+import { ThemeProvider } from '@features/theme'
+import { queryClient } from '@shared/api'
+import { QueryClientProvider } from '@tanstack/react-query'
 
 interface GlobalProvider {
   children: React.ReactNode
@@ -9,8 +11,10 @@ interface GlobalProvider {
 
 export const GlobalProvider = ({ children }: GlobalProvider) => {
   return (
-    <ThemeProvider>
-      <NextAuthSessionProvider>{children}</NextAuthSessionProvider>
-    </ThemeProvider>
+    <NextAuthSessionProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </QueryClientProvider>
+    </NextAuthSessionProvider>
   )
 }
