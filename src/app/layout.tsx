@@ -25,6 +25,7 @@ const RootLayout = ({ children }: RootLayout) => {
   return (
     <html lang='en'>
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
+        <Header variant='public' />
         <GlobalProvider>{children}</GlobalProvider>
       </body>
     </html>
