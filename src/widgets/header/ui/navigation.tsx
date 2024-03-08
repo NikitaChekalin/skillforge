@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export const Navigation = () => {
   return (
-    <nav className='flex items-start md:items-center gap-6 text-sm font-medium flex-col md:flex-row '>
+    <nav className='flex items-start md:items-center gap-10 text-sm font-medium flex-col md:flex-row '>
       <Link className='transition-colors hover:text-foreground/80 text-foreground/60' href='/map'>
         Map
       </Link>

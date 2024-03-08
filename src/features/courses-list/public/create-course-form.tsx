@@ -19,7 +19,7 @@ interface CreateCourseForm {
 }
 
 const createCourseFormSchema = z.object({
-  name: z.string(),
+  name: z.string().min(4, 'Please enter a course name with at least 4 characters'),
   description: z.string()
 })
 
@@ -48,9 +48,9 @@ export const CreateCourseForm = ({ className, revalidatingPagePath }: CreateCour
           name='name'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Название </FormLabel>
+              <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input placeholder='название...' {...field} />
+                <Input placeholder='Course name...' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -61,16 +61,16 @@ export const CreateCourseForm = ({ className, revalidatingPagePath }: CreateCour
           name='description'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Описание</FormLabel>
+              <FormLabel>Description</FormLabel>
               <FormControl>
-                <Textarea placeholder='описание...' {...field} />
+                <Textarea placeholder='Describe your course...' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button className='mt-8' type='submit' disabled={isCreateTransition}>
-          Добавить
+        <Button className='mt-10' type='submit' disabled={isCreateTransition}>
+          Add
         </Button>
       </form>
     </Form>
