@@ -1,6 +1,6 @@
 'use client'
 
-import { NextAuthSessionProvider } from '@entities/session'
+import { NextAuthSessionProvider } from '@entities/user'
 import { ThemeProvider } from '@features/theme'
 import { queryClient } from '@shared/api'
 import { QueryClientProvider } from '@tanstack/react-query'

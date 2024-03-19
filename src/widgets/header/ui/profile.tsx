@@ -1,6 +1,6 @@
 'use client'
 
-import { useNextAuthSession } from '@entities/session'
+import { useNextAuthSession } from '@entities/user'
 import { SignInButton } from '@features/auth/sign-in-button'
 import { useSignOut } from '@features/auth/use-sign-out'
 import { Avatar, AvatarFallback, AvatarImage } from '@shared/ui/avatar'

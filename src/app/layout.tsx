@@ -1,5 +1,4 @@
 import { cn } from '@lib/utils'
-import { Header } from '@widgets/header'
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 
@@ -25,7 +24,6 @@ const RootLayout = ({ children }: RootLayout) => {
   return (
     <html lang='en'>
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
-        <Header variant='public' />
         <GlobalProvider>{children}</GlobalProvider>
       </body>
     </html>
