@@ -1,3 +1,4 @@
+import AuthorizedGuard from '@features/auth/authorized-guard'
 import { Header } from '@widgets/header'
 
 interface Layout {
@@ -8,7 +9,7 @@ const Layout = async ({ children }: Layout) => {
   return (
     <>
       <Header variant='private' />
-      {children}
+      <AuthorizedGuard>{children}</AuthorizedGuard>
     </>
   )
 }
