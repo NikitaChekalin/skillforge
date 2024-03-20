@@ -41,8 +41,8 @@ CREATE TABLE "Session" (
 -- CreateTable
 CREATE TABLE "User" (
     "id" TEXT NOT NULL,
+    "role" "ROLE" NOT NULL DEFAULT 'USER',
     "email" TEXT NOT NULL,
-    "role" "ROLE" NOT NULL,
     "name" TEXT,
     "emailVerified" TIMESTAMP(3),
     "image" TEXT,
