@@ -48,8 +48,8 @@ enum ROLE {
 
 model User {
   id            String    @id @default(cuid())
-  email         String   @unique
-  role          ROLE
+  role          ROLE      @default(USER)
+  email         String    @unique
   name          String?
   emailVerified DateTime?
   image         String?

@@ -27,3 +27,9 @@ export type SessionEntity = {
   }
   expires: number
 }
+
+export type Profile = {
+  email: string
+  name?: Nullable<string>
+  image?: Nullable<string>
+}

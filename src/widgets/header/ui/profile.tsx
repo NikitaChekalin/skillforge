@@ -1,9 +1,8 @@
 'use client'
 
-import { useNextAuthSession } from '@entities/user'
+import { getProfileDisplayName, ProfileAvatar, useNextAuthSession } from '@entities/user'
 import { SignInButton } from '@features/auth/sign-in-button'
 import { useSignOut } from '@features/auth/use-sign-out'
-import { Avatar, AvatarFallback, AvatarImage } from '@shared/ui/avatar'
 import { Button } from '@shared/ui/button'
 import {
   DropdownMenu,
@@ -30,22 +29,23 @@ export const Profile = () => {
     return <SignInButton />
   }
 
+  const profile = session?.data?.user
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant='ghost' className='p-px rounded-full self-center h-8 w-8'>
-          <Avatar className='w-8 h-8'>
-            <AvatarImage src={session.data?.user.image} alt={session.data?.user.name} />
-            <AvatarFallback>NC</AvatarFallback>
-          </Avatar>
+          <ProfileAvatar profile={profile} />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-56 mr-2 '>
         <DropdownMenuLabel>
           <p>My account</p>
-          <p className='text-xs text-muted-foreground overflow-hidden text-ellipsis'>
-            {session.data?.user.name}
-          </p>
+          {profile && (
+            <p className='text-xs text-muted-foreground overflow-hidden text-ellipsis'>
+              {getProfileDisplayName(profile)}
+            </p>
+          )}
         </DropdownMenuLabel>
         <DropdownMenuGroup></DropdownMenuGroup>
         <DropdownMenuSeparator />
